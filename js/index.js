@@ -123,19 +123,25 @@ function changeCss(className, classValue) {
     classContainer.html('<style>' + className + ' {' + classValue + '}</style>');
 }
 
-function socialShare() { alert(8888)
-    navigator.screenshot.URI(function (error, res) {
-        if (error) {
-            alert(error);
-        } else {
-            alert('Image created');
-            window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
-                if (error) {
-                    console.error(error);
-                } else {
-                    console.log('Success setting wallpaper.');
-                }
-            });
-        }
-    }, 50);
+function socialShare() {
+    alert(8888)
+
+    try {
+        navigator.screenshot.URI(function (error, res) {
+            if (error) {
+                alert(error);
+            } else {
+                alert('Image created');
+                window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
+                    if (error) {
+                        console.error(error);
+                    } else {
+                        console.log('Success setting wallpaper.');
+                    }
+                });
+            }
+        }, 50);
+    } catch (exception) {
+        alert(exception);
+    }
 }
