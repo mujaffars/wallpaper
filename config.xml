@@ -14,6 +14,8 @@
     <gap:plugin name="cordova-plugin-wallpaper" source="npm" />
     <!--<plugin spec="https://github.com/ratson/cordova-plugin-admob-free.git" source="git" />-->
     
+    <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
+    
     <!-- Customize your app and platform with the preference element. -->
     <preference name='phonegap-version' value='cli-7.1.0' />
     <preference name='pgb-builder-version' value='2' />
