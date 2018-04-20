@@ -142,7 +142,7 @@ function socialShare() {
                         }
                     });
                 }
-            }, 50);
+            },'jpg',50,'myScreenShot');
 
         });
     } catch (exception) {
