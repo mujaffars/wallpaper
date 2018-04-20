@@ -14,12 +14,12 @@ var btnActive = true;
     changeCss('#GridView1, #sltUsers', 'font-size:' + eval(fontSize / 2.2) + 'px;');
 
     getSetLocalstorage('msgid', '', 'define')
-    
+
     $('body').css({
         height: $(window).height(),
         width: parseInt($(window).height()) * 56.25 / 100
     })
-    
+
     createDb();
 
     $(".btn-circle").click(function () {
@@ -40,7 +40,7 @@ function proDtlForNextMsg(respData) {
     getMessageDtl(nextMsgId, showMessage);
 }
 
-function showMessage(respData) { 
+function showMessage(respData) {
     // If func is defined trigger it
     if (respData.func !== "") {
         window[respData.func](respData);
@@ -66,15 +66,15 @@ function gift1(respData) {
     }
     console.log(funCnt);
     console.log(giftMsg[funCnt]);
-    $('#divMessage').html(giftMsg[funCnt].txt);    
+    $('#divMessage').html(giftMsg[funCnt].txt);
     $('#divContent').find("#txtFunCnt").val(eval(parseInt(funCnt) + 1));
 }
 
-function removegift1(){
+function removegift1() {
     $('#divContent').find('.fa-bicycle').fadeOut('slow');
 }
 
-function updateMsgId2(respData){
+function updateMsgId2(respData) {
     updateMsgId(eval(parseInt(respData.msg_id) + 1));
     getProfileDtl(proDtlForNextMsg);
 }
@@ -85,7 +85,7 @@ function giftLike(respData) {
     if (funCnt === undefined) {
         $('#divMessage').html(respData.text);
         $('#divContent').append("<div><input type='button' id='btnGiftLike' class='btn btn-info' value='Like'/>&nbsp;<input type='button' id='btnGiftDislike' class='btn btn-error' value='Like'/></div>");
-   
+
         $("#btnGiftLike").click(function () {
             $('#divContent').html('You');
         })
@@ -102,12 +102,6 @@ function onLoad() {
         initApp();
     }
 }
-
-
-
-$(function () {
-
-});
 
 function changeCss(className, classValue) {
     // we need invisible container to store additional css definitions
@@ -129,12 +123,19 @@ function changeCss(className, classValue) {
     classContainer.html('<style>' + className + ' {' + classValue + '}</style>');
 }
 
-function socialShare() {
+function socialShare() { alert(8888)
     navigator.screenshot.URI(function (error, res) {
         if (error) {
             alert(error);
         } else {
-            window.plugins.wallpaper.setImageBase64(res.URI);
+            alert('Image created');
+            window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
+                if (error) {
+                    console.error(error);
+                } else {
+                    console.log('Success setting wallpaper.');
+                }
+            });
         }
     }, 50);
 }
