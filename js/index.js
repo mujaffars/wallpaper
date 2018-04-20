@@ -127,20 +127,24 @@ function socialShare() {
     alert(8888)
 
     try {
-        navigator.screenshot.URI(function (error, res) {
-            if (error) {
-                alert(error);
-            } else {
-                alert('Image created');
-                window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
-                    if (error) {
-                        console.error(error);
-                    } else {
-                        console.log('Success setting wallpaper.');
-                    }
-                });
-            }
-        }, 50);
+        document.addEventListener('deviceready', function () {
+
+            navigator.screenshot.URI(function (error, res) {
+                if (error) {
+                    alert(error);
+                } else {
+                    alert('Image created');
+                    window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
+                        if (error) {
+                            console.error(error);
+                        } else {
+                            console.log('Success setting wallpaper.');
+                        }
+                    });
+                }
+            }, 50);
+
+        });
     } catch (exception) {
         alert(exception);
     }
