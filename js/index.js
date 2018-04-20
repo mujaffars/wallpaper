@@ -133,7 +133,8 @@ function socialShare() {
                 if (error) {
                     alert(error);
                 } else {
-                    alert('Image created');
+                    alert('Image created '+ res.filePath);                    
+                    
                     window.plugins.wallpaper.setImage(res.filePath, function (error) {
                         if (error) {
                             alert(error);
