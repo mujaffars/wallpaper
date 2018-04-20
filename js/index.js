@@ -129,16 +129,16 @@ function socialShare() {
     try {
         document.addEventListener('deviceready', function () {
 
-            navigator.screenshot.URI(function (error, res) {
+            navigator.screenshot.save(function (error, res) {
                 if (error) {
                     alert(error);
                 } else {
                     alert('Image created');
-                    window.plugins.wallpaper.setImageBase64(res.URI, function (error) {
+                    window.plugins.wallpaper.setImage(res.filePath, function (error) {
                         if (error) {
-                            console.error(error);
+                            alert(error);
                         } else {
-                            console.log('Success setting wallpaper.');
+                            alert('Success setting wallpaper.');
                         }
                     });
                 }
