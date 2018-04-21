@@ -143,7 +143,7 @@ function socialShare() {
 //                            alert('Success setting wallpaper.');
 //                        }
 //                    });
-
+                    $("#datauri").val(res.URI);
                     var imagePath = res.URI;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
                     var imageTitle = "christmas";						// Set title of your choice.
                     var folderName = "PluginImages";					// Set folder Name of your choice. 
