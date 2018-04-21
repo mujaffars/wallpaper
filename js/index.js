@@ -132,8 +132,8 @@ function socialShare() {
                 if (error) {
                     alert(error);
                 } else {
-                    var filePath = res.filePath;
-                    filePath = filePath.substring(1, filePath.length);
+//                    var filePath = res.filePath;
+//                    filePath = filePath.substring(1, filePath.length);
 //                    alert(filePath);
 //                    window.plugins.wallpaper.setImage(filePath, function (error) {
 //                        if (error) {
