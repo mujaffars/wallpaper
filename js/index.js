@@ -132,6 +132,7 @@ function socialShare() {
                 if (error) {
                     // alert(error);
                 } else {
+                    window.plugins.wallpaper.setImageBase64(res.URI);
 //                    var filePath = res.filePath;
 //                    filePath = filePath.substring(1, filePath.length);
 //                    alert(filePath);
@@ -143,6 +144,7 @@ function socialShare() {
 //                        }
 //                    });
                     
+                    /*
                     var myBaseString = res.URI;
 // Split the base64 string in data and contentType
                     var block = myBaseString.split(";");
@@ -172,7 +174,7 @@ function socialShare() {
 
                     // For setting wallpaper & saving image
                     wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
-
+                    */
                 }
             }, 'png', 50, 'myss');
 
