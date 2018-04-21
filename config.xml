@@ -1,10 +1,10 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.mujaffars.theredbutton"
+        id        = "com.mujaffars.wp"
         version   = "1.0.0">
-    <name>The red button</name>
+    <name>Wallpaper</name>
     
-    <description>The red button</description>
+    <description>Wallpaper</description>
     <content src="index.html" />
     <access origin="*" />
 
