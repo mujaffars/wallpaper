@@ -171,13 +171,26 @@ function socialShare2() {
     try {
         document.addEventListener('deviceready', function () {
             var filePath = $('#filepath').val();
-            window.plugins.wallpaper.setImage(filePath, function (error) {
-                if (error) {
-                    alert(error);
-                } else {
-                    alert('Success setting wallpaper.');
-                }
-            });
+//            window.plugins.wallpaper.setImage(filePath, function (error) {
+//                if (error) {
+//                    alert(error);
+//                } else {
+//                    alert('Success setting wallpaper.');
+//                }
+//            });
+            var imagePath = filePath;	
+            var imageTitle = "christmas";						// Set title of your choice.
+            var folderName = "PluginImages";					// Set folder Name of your choice. 
+            var success = function () {
+                alert("Success");
+            };			// Do something on success return.
+            var error = function (message) {
+                alert("Oopsie! " + message);
+            };	// Do something on error return.
+
+            // For setting wallpaper & saving image
+            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
+
         });
     } catch (exception) {
         alert(exception);
