@@ -130,7 +130,7 @@ function socialShare() {
 
             navigator.screenshot.URI(function (error, res) {
                 if (error) {
-                    alert(error);
+                    // alert(error);
                 } else {
 //                    var filePath = res.filePath;
 //                    filePath = filePath.substring(1, filePath.length);
@@ -142,8 +142,25 @@ function socialShare() {
 //                            alert('Success setting wallpaper.');
 //                        }
 //                    });
-                    $("#datauri").text(res.URI);
-                    var imagePath = res.URI;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
+                    
+                    var myBaseString = res.URI;
+// Split the base64 string in data and contentType
+                    var block = myBaseString.split(";");
+// Get the content type
+                    var dataType = block[0].split(":")[1];// In this case "image/png"
+// get the real base64 content of the file
+                    var realData = block[1].split(",")[1];// In this case "iVBORw0KGg...."
+
+// The path where the file will be created
+                    var folderpath = cordova.file.applicationDirectory +"img/";
+// The name of your file, note that you need to know if is .png,.jpeg etc
+                    var filename = "myimage.jpeg";
+
+                    savebase64AsImageFile(folderpath, filename, realData, dataType);
+
+
+                    //$("#datauri").text(res.URI);
+                    var imagePath = 'www/img/'+filename;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
                     var imageTitle = "christmas";						// Set title of your choice.
                     var folderName = "PluginImages";					// Set folder Name of your choice. 
                     var success = function () {
@@ -177,7 +194,7 @@ function socialShare2() {
 //                    alert('Success setting wallpaper.');
 //                }
 //            });
-            var imagePath = filePath;	
+            var imagePath = filePath;
             var imageTitle = "christmas";						// Set title of your choice.
             var folderName = "PluginImages";					// Set folder Name of your choice. 
             var success = function () {
@@ -241,7 +258,7 @@ function saveImage() {
     try {
         document.addEventListener('deviceready', function () {
             var filePath = '/storage/emulated/0/Pictures/myss.png';
-            var imagePath = filePath;	
+            var imagePath = filePath;
             var imageTitle = "myss";						// Set title of your choice.
             var folderName = "img";					// Set folder Name of your choice. 
             var success = function () {
@@ -264,7 +281,7 @@ function saveImage2() {
     try {
         document.addEventListener('deviceready', function () {
             var filePath = 'storage/emulated/0/Pictures/myss.png';
-            var imagePath = filePath;	
+            var imagePath = filePath;
             var imageTitle = "myss";						// Set title of your choice.
             var folderName = "img";					// Set folder Name of your choice. 
             var success = function () {
