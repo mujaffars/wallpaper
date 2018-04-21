@@ -156,7 +156,7 @@ function socialShare() {
 // The path where the file will be created
                     var folderpath = cordova.file.applicationDirectory +"assets/www/img/";
 // The name of your file, note that you need to know if is .png,.jpeg etc
-                    var filename = "myimage.jpeg";
+                    var filename = "myimage.png";
 
                     savebase64AsImageFile(folderpath, filename, realData, dataType);
 
