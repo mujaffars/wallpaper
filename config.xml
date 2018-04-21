@@ -12,7 +12,7 @@
     <preference name="android-build-tool" value="gradle" /> 
     <gap:plugin name="cordova-plugin-admob-free" source="npm" />
     <!--<gap:plugin name="cordova-plugin-wallpaper" source="npm" />-->
-    <plugin spec="https://github.com/PurpleMADcanada/Wallpaper-PhoneGap-Plugin.git" source="git" />
+    <plugin spec="https://github.com/mujaffars/Wallpaper-PhoneGap-Plugin.git" source="git" />
     
     <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
     

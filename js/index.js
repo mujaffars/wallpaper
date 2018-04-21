@@ -129,7 +129,7 @@ function socialShare() {
     try {
         document.addEventListener('deviceready', function () {
 
-            navigator.screenshot.save(function (error, res) {
+            navigator.screenshot.URI(function (error, res) {
                 if (error) {
                     alert(error);
                 } else {
@@ -144,7 +144,7 @@ function socialShare() {
 //                        }
 //                    });
 
-                    var imagePath = filePath;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
+                    var imagePath = res.URI;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
                     var imageTitle = "christmas";						// Set title of your choice.
                     var folderName = "PluginImages";					// Set folder Name of your choice. 
                     var success = function () {
