@@ -154,7 +154,8 @@ function socialShare() {
                     var realData = block[1].split(",")[1];// In this case "iVBORw0KGg...."
 
 // The path where the file will be created
-                    var folderpath = cordova.file.applicationDirectory +"assets/www/img/";
+                    //var folderpath = cordova.file.applicationDirectory +"assets/www/img/";
+                    var folderpath = "file:///storage/emulated/0/Pictures/";
 // The name of your file, note that you need to know if is .png,.jpeg etc
                     var filename = "myimage.png";
 
