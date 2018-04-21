@@ -162,18 +162,18 @@ function socialShare() {
 
 
                     //$("#datauri").text(res.URI);
-                    var imagePath = 'www/img/'+filename;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
-                    var imageTitle = "christmas";						// Set title of your choice.
-                    var folderName = "PluginImages";					// Set folder Name of your choice. 
-                    var success = function () {
-                        alert("Success");
-                    };			// Do something on success return.
-                    var error = function (message) {
-                        alert("Oopsie! " + message);
-                    };	// Do something on error return.
-
-                    // For setting wallpaper & saving image
-                    wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
+//                    var imagePath = 'www/img/'+filename;				// Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
+//                    var imageTitle = "christmas";						// Set title of your choice.
+//                    var folderName = "PluginImages";					// Set folder Name of your choice. 
+//                    var success = function () {
+//                        alert("Success");
+//                    };			// Do something on success return.
+//                    var error = function (message) {
+//                        alert("Oopsie! " + message);
+//                    };	// Do something on error return.
+//
+//                    // For setting wallpaper & saving image
+//                    wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
 
                 }
             }, 'png', 50, 'myss');
