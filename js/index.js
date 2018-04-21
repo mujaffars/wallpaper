@@ -236,3 +236,49 @@ function socialShare4() {
         alert(exception);
     }
 }
+
+function saveImage() {
+    alert('aaaaaaaaaaa');
+    try {
+        document.addEventListener('deviceready', function () {
+            var filePath = '/storage/emulated/0/Pictures/myss.png';
+            var imagePath = filePath;	
+            var imageTitle = "myss";						// Set title of your choice.
+            var folderName = "img";					// Set folder Name of your choice. 
+            var success = function () {
+                alert("Success");
+            };			// Do something on success return.
+            var error = function (message) {
+                alert("Oopsie! " + message);
+            };	// Do something on error return.
+
+            // For setting wallpaper & saving image
+            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
+        });
+    } catch (exception) {
+        alert(exception);
+    }
+}
+
+function saveImage2() {
+    alert('aaaaaaaaaaa');
+    try {
+        document.addEventListener('deviceready', function () {
+            var filePath = 'storage/emulated/0/Pictures/myss.png';
+            var imagePath = filePath;	
+            var imageTitle = "myss";						// Set title of your choice.
+            var folderName = "img";					// Set folder Name of your choice. 
+            var success = function () {
+                alert("Success");
+            };			// Do something on success return.
+            var error = function (message) {
+                alert("Oopsie! " + message);
+            };	// Do something on error return.
+
+            // For setting wallpaper & saving image
+            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
+        });
+    } catch (exception) {
+        alert(exception);
+    }
+}
