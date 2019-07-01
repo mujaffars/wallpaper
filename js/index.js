@@ -290,7 +290,7 @@ function saveImage11() {
 //            window.plugins.wallpaper.setImage('img/wall.jpg');
 //            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
 
-            var remoteFile="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/05/mobile-wallpapers-24-610x1084.jpg";
+            var remoteFile="https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png";
             window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
                 var filename='image.jpg';
                 var filepath=fileEntry.toURL()+filename;
