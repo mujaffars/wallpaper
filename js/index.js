@@ -283,14 +283,16 @@ function saveImage() {
 }
 
 function saveImage11() {
-     alert('aaaaddd55');
-    document.addEventListener('deviceready', function () {
-        try {
-            wallpaper.setImage('img/21.jpg');
-        } catch (exception) {
-            alert(exception);
-        }
-    });
+    alert('aaaaddd55');
+
+    try {
+        document.addEventListener('deviceready', function () {
+            wallpaper.setImage('img/wall.jpg');
+            alert('Donnnne');
+        });
+    } catch (exception) {
+        alert(exception);
+    }
 }
 
 
