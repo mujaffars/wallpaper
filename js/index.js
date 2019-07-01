@@ -299,7 +299,7 @@ function saveImage11() {
                     alert(res.filePath);
 
                     try {
-                        window.plugins.wallpaper.setImageHttp(res.filePath.toURL(), function (error) {
+                        window.plugins.wallpaper.setImageHttp(res.filePath.toURI().toURL(), function (error) {
                             if (error) {
                                 alert(error);
                                 console.error(error);
