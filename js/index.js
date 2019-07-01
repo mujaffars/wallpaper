@@ -296,15 +296,22 @@ function saveImage11() {
                     console.error(error);
                 } else {
 
-                    window.plugins.wallpaper.setImageHttp(res.filePath.toURL(), function (error) {
-                        if (error) {
-                            alert(error);
-                            console.error(error);
-                        } else {
-                            alert('Success setting wallpaper.');
-                            console.log('Success setting wallpaper.');
-                        }
-                    });
+                    alert(res.filePath);
+
+                    try {
+                        window.plugins.wallpaper.setImageHttp(res.filePath.toURL(), function (error) {
+                            if (error) {
+                                alert(error);
+                                console.error(error);
+                            } else {
+                                alert('Success setting wallpaper.');
+                                console.log('Success setting wallpaper.');
+                            }
+                        });
+                    } catch (exception) {
+                        alert(exception);
+                    }
+                    
                     alert(res.filePath);
                     console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
                 }
