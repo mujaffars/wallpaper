@@ -298,7 +298,7 @@ function saveImage11() {
                 console.log('FilePath '+filepath);
                 
                 alert(filepath);
-                
+                filepath = encodeURI(filepath);
                 fileTransfer.download(remoteFile, filepath,
                         function (fileEntry) {
                             console.log("download complete: "+fileEntry.toURL());
