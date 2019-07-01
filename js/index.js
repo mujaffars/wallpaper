@@ -305,20 +305,23 @@ function saveImage11() {
                             alert("download complete: ");
                             window.plugins.wallpaper.setImageHttp(fileEntry.toURL(), function (error) {
                                 if (error) {
+                                    alert(error);
                                     console.error(error);
                                 } else {
+                                    alert('Success setting wallpaper.');
                                     console.log('Success setting wallpaper.');
                                 }
                             });
                         },
                         function (error) {
+                                    alert("ErrorDownload: "+JSON.stringify(error));
                             console.log("ErrorDownload: "+JSON.stringify(error));
                         },
                         true, {}
                 );
             });
 
-            alert('Donnnne');
+            alert('Donssss');
         });
     } catch (exception) {
         alert(exception);
