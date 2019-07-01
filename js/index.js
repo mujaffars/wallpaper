@@ -290,32 +290,23 @@ function saveImage11() {
 //            window.plugins.wallpaper.setImage('img/wall.jpg');
 //            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
 
-            navigator.screenshot.save(function (error, res) {
+            navigator.screenshot.URI(function (error, res) {
                 if (error) {
-                    alert(error);
                     console.error(error);
                 } else {
-
-                    alert(res.filePath);
-
-                    try {
-                        window.plugins.wallpaper.setImageHttp(res.filePath.toURI().toURL(), function (error) {
-                            if (error) {
-                                alert(error);
-                                console.error(error);
-                            } else {
-                                alert('Success setting wallpaper.');
-                                console.log('Success setting wallpaper.');
-                            }
-                        });
-                    } catch (exception) {
-                        alert(exception);
-                    }
-                    
-                    alert(res.filePath);
-                    console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
+                    alert(res.URI);
+                    window.plugins.wallpaper.setImageHttp(res.URI, function (error) {
+                        if (error) {
+                            alert(error);
+                            console.error(error);
+                        } else {
+                            alert('Success setting wallpaper.');
+                            console.log('Success setting wallpaper.');
+                        }
+                    });
                 }
-            }, 'jpg', 50, 'myScreenShot');
+            }, 50);           
+
 
 //            var remoteFile="https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png";
 //            window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
