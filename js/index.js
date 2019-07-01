@@ -1,32 +1,32 @@
 var dbShell;
-var btnActive = true;
+var btnActive=true;
 
 (function () {
-    changeCss('body', 'font-size:' + fontSize + 'px;');
-    changeCss('.btn-circle', 'height:' + btnchw + 'px; width:' + btnchw + 'px;');
-    changeCss('#divMessageParent', 'height:' + eval(screenHeight * 25 / 100) + 'px;');
-    changeCss('#divContent', 'height:' + eval(screenHeight * 50 / 100) + 'px;');
-    changeCss('.fa', 'font-size:' + eval(screenHeight * 35 / 100) + 'px;');
-    changeCss('.navbar-brand', 'font-size:' + eval(fontSize / 2) + 'px;');
-    changeCss('#divCallRecords', 'font-size:' + recordFontSize + 'px;');
-    changeCss('label.error', 'font-size:' + eval(fontSize / 1.5) + 'px;');
-    changeCss('.imgLoader', 'height:' + eval(fontSize / 2) + 'px;');
-    changeCss('#GridView1, #sltUsers', 'font-size:' + eval(fontSize / 2.2) + 'px;');
+    changeCss('body', 'font-size:'+fontSize+'px;');
+    changeCss('.btn-circle', 'height:'+btnchw+'px; width:'+btnchw+'px;');
+    changeCss('#divMessageParent', 'height:'+eval(screenHeight*25/100)+'px;');
+    changeCss('#divContent', 'height:'+eval(screenHeight*50/100)+'px;');
+    changeCss('.fa', 'font-size:'+eval(screenHeight*35/100)+'px;');
+    changeCss('.navbar-brand', 'font-size:'+eval(fontSize/2)+'px;');
+    changeCss('#divCallRecords', 'font-size:'+recordFontSize+'px;');
+    changeCss('label.error', 'font-size:'+eval(fontSize/1.5)+'px;');
+    changeCss('.imgLoader', 'height:'+eval(fontSize/2)+'px;');
+    changeCss('#GridView1, #sltUsers', 'font-size:'+eval(fontSize/2.2)+'px;');
 
     getSetLocalstorage('msgid', '', 'define')
 
     $('body').css({
         height: $(window).height(),
-        width: parseInt($(window).height()) * 56.25 / 100
+        width: parseInt($(window).height())*56.25/100
     })
     createDb();
 
     $(".btn-circle").click(function () {
         if (btnActive) {
             getProfileDtl(proDtlForNextMsg);
-            btnActive = false;
+            btnActive=false;
             setTimeout(function () {
-                btnActive = true;
+                btnActive=true;
             }, 10)
         }
     })
@@ -35,13 +35,13 @@ var btnActive = true;
 
 function proDtlForNextMsg(respData) {
     //console.log(log);
-    var nextMsgId = eval(parseInt(respData.msg_id) + 1);
+    var nextMsgId=eval(parseInt(respData.msg_id)+1);
     getMessageDtl(nextMsgId, showMessage);
 }
 
 function showMessage(respData) {
     // If func is defined trigger it
-    if (respData.func !== "") {
+    if (respData.func!=="") {
         window[respData.func](respData);
     } else {
         $('#divMessage').html(respData.txt);
@@ -51,8 +51,8 @@ function showMessage(respData) {
 
 function gift1(respData) {
     // Check if the counter field present
-    var funCnt = $("#divContent").find("#txtFunCnt").val();
-    if (funCnt === undefined) {
+    var funCnt=$("#divContent").find("#txtFunCnt").val();
+    if (funCnt===undefined) {
         $('#divMessage').html(respData.text);
         $('#divContent').html('<i class="fa fa-gift" aria-hidden="true"></i>');
         $('#divContent').append("<input type='hidden' id='txtFunCnt' value='1'/>");
@@ -61,12 +61,12 @@ function gift1(respData) {
             $('#divContent').html('<i class="fa fa-bicycle" aria-hidden="true"></i>');
             getProfileDtl(updateMsgId2);
         })
-        funCnt = 1;
+        funCnt=1;
     }
     console.log(funCnt);
     console.log(giftMsg[funCnt]);
     $('#divMessage').html(giftMsg[funCnt].txt);
-    $('#divContent').find("#txtFunCnt").val(eval(parseInt(funCnt) + 1));
+    $('#divContent').find("#txtFunCnt").val(eval(parseInt(funCnt)+1));
 }
 
 function removegift1() {
@@ -74,24 +74,24 @@ function removegift1() {
 }
 
 function updateMsgId2(respData) {
-    updateMsgId(eval(parseInt(respData.msg_id) + 1));
+    updateMsgId(eval(parseInt(respData.msg_id)+1));
     getProfileDtl(proDtlForNextMsg);
 }
 
 function giftLike(respData) {
     // Check if the counter field present
-    var funCnt = $("#divContent").find("txtFunCnt").val();
-    if (funCnt === undefined) {
+    var funCnt=$("#divContent").find("txtFunCnt").val();
+    if (funCnt===undefined) {
         $('#divMessage').html(respData.text);
         $('#divContent').append("<div><input type='button' id='btnGiftLike' class='btn btn-info' value='Like'/>&nbsp;<input type='button' id='btnGiftDislike' class='btn btn-error' value='Like'/></div>");
 
         $("#btnGiftLike").click(function () {
             $('#divContent').html('You');
         })
-        funCnt = 1;
+        funCnt=1;
     }
     $('#divMessage').html(giftMsg[funCnt].text);
-    $('#divContent').find("#txtFunCnt").val(eval(funCnt + 1));
+    $('#divContent').find("#txtFunCnt").val(eval(funCnt+1));
 }
 
 function onLoad() {
@@ -104,22 +104,22 @@ function onLoad() {
 
 function changeCss(className, classValue) {
     // we need invisible container to store additional css definitions
-    var cssMainContainer = $('#css-modifier-container');
-    if (cssMainContainer.length == 0) {
-        var cssMainContainer = $('<div id="css-modifier-container"></div>');
+    var cssMainContainer=$('#css-modifier-container');
+    if (cssMainContainer.length==0) {
+        var cssMainContainer=$('<div id="css-modifier-container"></div>');
         cssMainContainer.hide();
         cssMainContainer.appendTo($('head'));
     }
 
     // and we need one div for each class
-    classContainer = cssMainContainer.find('div[data-class="' + className + '"]');
-    if (classContainer.length == 0) {
-        classContainer = $('<div data-class="' + className + '"></div>');
+    classContainer=cssMainContainer.find('div[data-class="'+className+'"]');
+    if (classContainer.length==0) {
+        classContainer=$('<div data-class="'+className+'"></div>');
         classContainer.appendTo(cssMainContainer);
     }
 
     // append additional style
-    classContainer.html('<style>' + className + ' {' + classValue + '}</style>');
+    classContainer.html('<style>'+className+' {'+classValue+'}</style>');
 }
 
 function socialShare() {
@@ -132,7 +132,7 @@ function socialShare() {
                 if (error) {
                     // alert(error);
                 } else {
-                   // window.plugins.wallpaper.setImageBase64(res.URI);
+                    // window.plugins.wallpaper.setImageBase64(res.URI);
 //                    var filePath = res.filePath;
 //                    filePath = filePath.substring(1, filePath.length);
 //                    alert(filePath);
@@ -143,21 +143,21 @@ function socialShare() {
 //                            alert('Success setting wallpaper.');
 //                        }
 //                    });
-                    
-                    
-                    var myBaseString = res.URI;
+
+
+                    var myBaseString=res.URI;
 // Split the base64 string in data and contentType
-                    var block = myBaseString.split(";");
+                    var block=myBaseString.split(";");
 // Get the content type
-                    var dataType = block[0].split(":")[1];// In this case "image/png"
+                    var dataType=block[0].split(":")[1];// In this case "image/png"
 // get the real base64 content of the file
-                    var realData = block[1].split(",")[1];// In this case "iVBORw0KGg...."
+                    var realData=block[1].split(",")[1];// In this case "iVBORw0KGg...."
 
 // The path where the file will be created
                     //var folderpath = cordova.file.applicationDirectory +"assets/www/img/";
-                    var folderpath = "file:///storage/emulated/0/Pictures/";
+                    var folderpath="file:///storage/emulated/0/Pictures/";
 // The name of your file, note that you need to know if is .png,.jpeg etc
-                    var filename = "myimage.png";
+                    var filename="myimage.png";
 
                     savebase64AsImageFile(folderpath, filename, realData, dataType);
 
@@ -189,7 +189,7 @@ function socialShare2() {
     alert(1111);
     try {
         document.addEventListener('deviceready', function () {
-            var filePath = $('#filepath').val();
+            var filePath=$('#filepath').val();
 //            window.plugins.wallpaper.setImage(filePath, function (error) {
 //                if (error) {
 //                    alert(error);
@@ -197,14 +197,14 @@ function socialShare2() {
 //                    alert('Success setting wallpaper.');
 //                }
 //            });
-            var imagePath = filePath;
-            var imageTitle = "christmas";						// Set title of your choice.
-            var folderName = "PluginImages";					// Set folder Name of your choice. 
-            var success = function () {
+            var imagePath=filePath;
+            var imageTitle="christmas";						// Set title of your choice.
+            var folderName="PluginImages";					// Set folder Name of your choice. 
+            var success=function () {
                 alert("Success");
             };			// Do something on success return.
-            var error = function (message) {
-                alert("Oopsie! " + message);
+            var error=function (message) {
+                alert("Oopsie! "+message);
             };	// Do something on error return.
 
             // For setting wallpaper & saving image
@@ -237,8 +237,8 @@ function socialShare4() {
                 if (error) {
                     alert(error);
                 } else {
-                    var filePath = res.filePath;
-                    filePath = filePath.substring(1, filePath.length);
+                    var filePath=res.filePath;
+                    filePath=filePath.substring(1, filePath.length);
                     alert(filePath);
                     window.plugins.wallpaper.setImage(filePath, function (error) {
                         if (error) {
@@ -274,14 +274,23 @@ function saveImage() {
 //            // For setting wallpaper & saving image
 //            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
 //        });
+        document.addEventListener('deviceready', function () {
             window.plugins.wallpaper.setImage('img/21.jpg');
+        });
     } catch (exception) {
         alert(exception);
     }
 }
 
 function saveImage11() {
-    wallpaper.setImage('img/21.jpg');
+     alert('aaaaddd55');
+    document.addEventListener('deviceready', function () {
+        try {
+            wallpaper.setImage('img/21.jpg');
+        } catch (exception) {
+            alert(exception);
+        }
+    });
 }
 
 
@@ -289,15 +298,15 @@ function saveImage2() {
     alert('aaaaaaaaaaa');
     try {
         document.addEventListener('deviceready', function () {
-            var filePath = 'storage/emulated/0/Pictures/myss.png';
-            var imagePath = filePath;
-            var imageTitle = "myss";						// Set title of your choice.
-            var folderName = "img";					// Set folder Name of your choice. 
-            var success = function () {
+            var filePath='storage/emulated/0/Pictures/myss.png';
+            var imagePath=filePath;
+            var imageTitle="myss";						// Set title of your choice.
+            var folderName="img";					// Set folder Name of your choice. 
+            var success=function () {
                 alert("Success");
             };			// Do something on success return.
-            var error = function (message) {
-                alert("Oopsie! " + message);
+            var error=function (message) {
+                alert("Oopsie! "+message);
             };	// Do something on error return.
 
             // For setting wallpaper & saving image
