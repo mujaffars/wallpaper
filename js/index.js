@@ -296,11 +296,13 @@ function saveImage11() {
                 var filepath=fileEntry.toURL()+filename;
                 var fileTransfer=new FileTransfer();
                 console.log('FilePath '+filepath);
-
+                
+                alert(filepath);
+                
                 fileTransfer.download(remoteFile, filepath,
                         function (fileEntry) {
                             console.log("download complete: "+fileEntry.toURL());
-
+                            alert("download complete: ");
                             window.plugins.wallpaper.setImageHttp(fileEntry.toURL(), function (error) {
                                 if (error) {
                                     console.error(error);
