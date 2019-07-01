@@ -257,27 +257,33 @@ function socialShare4() {
 }
 
 function saveImage() {
-    alert('aaaaaaaaaaa');
+    alert('aaaaaa5555');
     try {
-        document.addEventListener('deviceready', function () {
-            var filePath = '/storage/emulated/0/Pictures/myss.png';
-            var imagePath = filePath;
-            var imageTitle = "myss";						// Set title of your choice.
-            var folderName = "img";					// Set folder Name of your choice. 
-            var success = function () {
-                alert("Success");
-            };			// Do something on success return.
-            var error = function (message) {
-                alert("Oopsie! " + message);
-            };	// Do something on error return.
-
-            // For setting wallpaper & saving image
-            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
-        });
+//        document.addEventListener('deviceready', function () {
+//            var filePath = '/storage/emulated/0/Pictures/myss.png';
+//            var imagePath = filePath;
+//            var imageTitle = "myss";						// Set title of your choice.
+//            var folderName = "img";					// Set folder Name of your choice. 
+//            var success = function () {
+//                alert("Success");
+//            };			// Do something on success return.
+//            var error = function (message) {
+//                alert("Oopsie! " + message);
+//            };	// Do something on error return.
+//
+//            // For setting wallpaper & saving image
+//            wallpaper.setImage(imagePath, imageTitle, folderName, success, error);
+//        });
+            window.plugins.wallpaper.setImage('img/21.jpg');
     } catch (exception) {
         alert(exception);
     }
 }
+
+function saveImage11() {
+    wallpaper.setImage('img/21.jpg');
+}
+
 
 function saveImage2() {
     alert('aaaaaaaaaaa');
