@@ -287,7 +287,9 @@ function saveImage11() {
 
     try {
         document.addEventListener('deviceready', function () {
-            window.plugins.wallpaper.setImage('img/wall.jpg');
+//            window.plugins.wallpaper.setImage('img/wall.jpg');
+            window.plugins.wallpaper.setImageHttp("https://i.redd.it/o2b22v1zb0j11.jpg");
+            
             alert('Donnnne');
         });
     } catch (exception) {
