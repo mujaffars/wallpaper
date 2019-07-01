@@ -283,12 +283,12 @@ function saveImage() {
 }
 
 function saveImage11() {
-    alert('aaaaddd55');
+    alert('aaa444445');
 
     try {
         document.addEventListener('deviceready', function () {
 //            window.plugins.wallpaper.setImage('img/wall.jpg');
-            window.plugins.wallpaper.setImageHttp("https://i.redd.it/o2b22v1zb0j11.jpg");
+            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
             
             alert('Donnnne');
         });
