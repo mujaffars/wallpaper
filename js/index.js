@@ -290,36 +290,55 @@ function saveImage11() {
 //            window.plugins.wallpaper.setImage('img/wall.jpg');
 //            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
 
-            var remoteFile="https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png";
-            window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
-                var filename='image.jpg';
-                var filepath=fileEntry.toURL()+filename;
-                var fileTransfer=new FileTransfer();
-                console.log('FilePath '+filepath);
-                
-                alert(filepath);
-                remoteFile = encodeURI(remoteFile);
-                fileTransfer.download(remoteFile, filepath,
-                        function (fileEntry) {
-                            console.log("download complete: "+fileEntry.toURL());
-                            alert("download complete: ");
-                            window.plugins.wallpaper.setImageHttp(fileEntry.toURL(), function (error) {
-                                if (error) {
-                                    alert(error);
-                                    console.error(error);
-                                } else {
-                                    alert('Success setting wallpaper.');
-                                    console.log('Success setting wallpaper.');
-                                }
-                            });
-                        },
-                        function (error) {
-                                    alert("ErrorDownload: "+JSON.stringify(error));
-                            console.log("ErrorDownload: "+JSON.stringify(error));
-                        },
-                        true, {}
-                );
-            });
+            navigator.screenshot.save(function (error, res) {
+                if (error) {
+                    console.error(error);
+                } else {
+
+                    window.plugins.wallpaper.setImageHttp(res.filePath.toURL(), function (error) {
+                        if (error) {
+                            alert(error);
+                            console.error(error);
+                        } else {
+                            alert('Success setting wallpaper.');
+                            console.log('Success setting wallpaper.');
+                        }
+                    });
+
+                    console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
+                }
+            }, 'jpg', 50, 'myScreenShot');
+
+//            var remoteFile="https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png";
+//            window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
+//                var filename='image.jpg';
+//                var filepath=fileEntry.toURL()+filename;
+//                var fileTransfer=new FileTransfer();
+//                console.log('FilePath '+filepath);
+//
+//                alert(filepath);
+//                remoteFile=encodeURI(remoteFile);
+//                fileTransfer.download(remoteFile, filepath,
+//                        function (fileEntry) {
+//                            console.log("download complete: "+fileEntry.toURL());
+//                            alert("download complete: ");
+//                            window.plugins.wallpaper.setImageHttp(fileEntry.toURL(), function (error) {
+//                                if (error) {
+//                                    alert(error);
+//                                    console.error(error);
+//                                } else {
+//                                    alert('Success setting wallpaper.');
+//                                    console.log('Success setting wallpaper.');
+//                                }
+//                            });
+//                        },
+//                        function (error) {
+//                            alert("ErrorDownload: "+JSON.stringify(error));
+//                            console.log("ErrorDownload: "+JSON.stringify(error));
+//                        },
+//                        true, {}
+//                );
+//            });
 
             alert('Donssss');
         });
