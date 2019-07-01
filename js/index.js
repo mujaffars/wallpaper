@@ -292,6 +292,7 @@ function saveImage11() {
 
             navigator.screenshot.save(function (error, res) {
                 if (error) {
+                    alert(error);
                     console.error(error);
                 } else {
 
@@ -304,7 +305,7 @@ function saveImage11() {
                             console.log('Success setting wallpaper.');
                         }
                     });
-
+                    alert(res.filePath);
                     console.log('ok', res.filePath); //should be path/to/myScreenshot.jpg
                 }
             }, 'jpg', 50, 'myScreenShot');
