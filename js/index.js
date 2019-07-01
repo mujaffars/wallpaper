@@ -288,8 +288,34 @@ function saveImage11() {
     try {
         document.addEventListener('deviceready', function () {
 //            window.plugins.wallpaper.setImage('img/wall.jpg');
-            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
-            
+//            window.plugins.wallpaper.setImageHttp("https://www.helpmeenroll.com/evolve/public/img/graphic-lady.png");
+
+            var remoteFile="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/05/mobile-wallpapers-24-610x1084.jpg";
+            window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fileEntry) {
+                var filename='image.jpg';
+                var filepath=fileEntry.toURL()+filename;
+                var fileTransfer=new FileTransfer();
+                console.log('FilePath '+filepath);
+
+                fileTransfer.download(remoteFile, filepath,
+                        function (fileEntry) {
+                            console.log("download complete: "+fileEntry.toURL());
+
+                            window.plugins.wallpaper.setImageHttp(fileEntry.toURL(), function (error) {
+                                if (error) {
+                                    console.error(error);
+                                } else {
+                                    console.log('Success setting wallpaper.');
+                                }
+                            });
+                        },
+                        function (error) {
+                            console.log("ErrorDownload: "+JSON.stringify(error));
+                        },
+                        true, {}
+                );
+            });
+
             alert('Donnnne');
         });
     } catch (exception) {
