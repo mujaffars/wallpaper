@@ -28,6 +28,8 @@ var setWPClicked=false;
         saveImage11();
         setTimeout(function () {
             setWPClicked=false;
+            $('#btnSetWallpaper').show();
+            $('#datauri').show();
         }, 2000);
     })
 
