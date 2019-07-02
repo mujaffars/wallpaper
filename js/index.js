@@ -25,7 +25,7 @@ var setWPClicked=false;
 
     $("#btnSetWallpaper").click(function (event) {
         setWPClicked=true;
-        saveImage11();
+        setWallpaper();
         setTimeout(function () {
             setWPClicked=false;
             $('#btnSetWallpaper').show();
@@ -175,30 +175,33 @@ function socialShare3() {
     }
 }
 
-function saveImage11() {
+function setWallpaper() {
+
     $('#btnSetWallpaper').hide();
     $('#datauri').hide();
-    try {
-        document.addEventListener('deviceready', function () {
 
-            navigator.screenshot.URI(function (error, res) {
-                if (error) {
-                    console.error(error);
-                } else {
-                    window.plugins.wallpaper.setImageHttp(res.URI, function (error) {
-                        if (error) {
-                            alert(error);
-                            console.error(error);
-                        } else {
-                            $('#btnSetWallpaper').show();
-                            $('#datauri').show();
-                        }
-                    });
-                }
-            }, 50);
-        });
-    } catch (exception) {
-        alert(exception);
-    }
-    event.preventDefault();
+    setTimeout(function () {
+        try {
+            document.addEventListener('deviceready', function () {
+
+                navigator.screenshot.URI(function (error, res) {
+                    if (error) {
+                        console.error(error);
+                    } else {
+                        window.plugins.wallpaper.setImageHttp(res.URI, function (error) {
+                            if (error) {
+                                alert(error);
+                                console.error(error);
+                            } else {
+                                $('#btnSetWallpaper').show();
+                                $('#datauri').show();
+                            }
+                        });
+                    }
+                }, 50);
+            });
+        } catch (exception) {
+            alert(exception);
+        }
+    }, 200);
 }
