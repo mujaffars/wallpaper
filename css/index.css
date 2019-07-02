@@ -31,7 +31,7 @@ body {
     margin:0 auto;
     padding:0px;
     width:100%;
-    background-image: url('../img/transp_bg.png');
+    /*background-image: url('../img/transp_bg.png');*/
     text-align: center;
 }
 
@@ -59,112 +59,36 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+body{
+    height: 100vh;
+    margin: 0;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+#colourOne{
+    height: 200px;
+    background-color: black;
+    opacity: 0.5;
+    margin: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
 }
 
-.event.listening {
-    background-color:#333333;
-    display:block;
+#colourTwo{
+    height: 200px;
+    background-color: black;
+    opacity: 0.5;
+    margin: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
-.clsDate{
-    width: 80px;
-}
-.btn{
-    padding: 4px;
-}
-.ui-datepicker-title{
-    color : grey;        
-}
-.clsTbl{    
-    background-image: url(../img/pixel_weave.png);
-    color: #5d5555;
-}
-.clsTbl .row{
-    margin: 0 auto;
+h3{
+    font-size: 60px;
+    color: white;
     text-align: center;
-}
-.clsTbl label{
-    font-weight: normal;
-    color: #c11515;
-}
-#divLoading{
-    text-align: center;    
-}
-.cntainr{
-    margin: 10% 5%
-}
-#btnRefresh{
-    float: right;
-}
-@font-face {
-    font-family: myFirstFont;
-    src: url(SpecialElite.ttf);
-}
-div {
-    font-family: myFirstFont;
-}
-#divButton{
-    text-align: center;
-}
-#divMessage{
-    margin: 2%;
-    padding: 10px;
-    height: 20%;
-}
-.btn-circle {
-    width: 66px;
-    height: 66px;
-    text-align: center;
-    padding: 6px 0;
-    font-size: 12px;
-    line-height: 1.42;
-    border-radius: 37px;
-    outline: 0;
-}
-#divContent{
-    text-align: center;
-    font-size: 150px;
-    color: #952fad;
-    height: 60%;
-}
-.fa-bicycle{
-    color: #a997a0;
+    position: flexbox;
+    top: 50%;
+    font-family: sans-serif;
 }

@@ -38,50 +38,21 @@
 
         <title>The lonely red button</title>
     </head>
-    <body onload="onLoad()">
-        <h1>Hello AdMob</h1>
-        <button onclick="socialShare()">Show me some AD</button>
-        <br/><br/>
-        <input type="text" id="filepath" name="filepath" value=""/>
-        <button onclick="socialShare2()">Share 2</button>
-        <br/><br/>
-        <button onclick="socialShare3()">Share 3</button>
-        <br/><br/>
-        <button onclick="saveImage()">save 1</button>
-        <br/><br/>
-        <br/><br/>
-        <button onclick="saveImage11()">save 1 1</button>
-        <br/><br/>
-        <button onclick="saveImage2()">save 2</button>
-        <br/><br/>
+    <body id="background" onload="firstColour()" onclick="firstColour()">
+        <button id="btnSetWallpaper">Set as wallpaper</button>
+        <br/>
+        <br/>
         <textarea id="datauri">
             
         </textarea>
-        /storage/emulated/0/Pictures/myss.png
-        
-        /Internal Storage/Pictures/myss.png
-        
-        www/img/logo.png
-        
-        www/img/21.jpg
-        <form id="loginForm">
-            <div class="cntainr">
-                <div>
 
-                    <div id="divMessageParent">
-                        <div id="divMessage" class="">
+        <div id="colourOne">
+            <h3 id="topColour"></h3>
+        </div>
 
-                        </div>
-                    </div>
-
-                    <div id="divContent">
-
-                    </div>
-                    
-                </div>
-            </div>
-
-        </form>
+        <div id="colourTwo">
+            <h3 id="bottomColour"></h3>
+        </div>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

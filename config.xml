@@ -1,29 +1,26 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.mujaffars.wp"
+        id        = "com.mujaffars.wallpaper"
         version   = "1.0.0">
-    <name>Wallpaper</name>
+    <name>Amazing Wallpaper Generator</name>
     
-    <description>Wallpaper</description>
+    <description>Amazing Wallpaper Generator</description>
     <content src="index.html" />
     <access origin="*" />
 
     <preference name="permissions" value="none"/>
     <preference name="android-build-tool" value="gradle" /> 
-    <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>
+<!--    <gap:plugin name="cordova-plugin-file" source="npm" />
+    <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>-->
     
     <plugin spec="https://github.com/fbsanches/cordova-plugin-wallpaper.git" source="git" />
-    
-    <!--<gap:plugin name="cordova-plugin-wallpaper" source="npm" />-->
-    <!--<plugin spec="https://github.com/PurpleMADcanada/Wallpaper-PhoneGap-Plugin.git" source="git" />-->
     
     <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
     
     <!-- Customize your app and platform with the preference element. -->
     <preference name='phonegap-version' value='cli-7.1.0' />
     <preference name='pgb-builder-version' value='2' />
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="handset" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="false" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
@@ -35,12 +32,11 @@
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-minSdkVersion"      value="16" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="19" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-targetSdkVersion" value="27" />
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+    <preference name="Fullscreen" value="true" />
     
-    <preference name="AndroidPersistentFileLocation" value="Internal" />
-    <preference name="iosPersistentFileLocation" value="Library" />
-
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
     <icon gap:density="mdpi" gap:platform="android" src="res/icon/android/icon-48-mdpi.png" />
