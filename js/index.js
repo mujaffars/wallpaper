@@ -55,6 +55,9 @@ var randomColourOne;
 var randomColourTwo;
 
 $(document).ready(function () {
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
     document.body.addEventListener('touchmove', function (event) {
         event.preventDefault();
     }, false);
