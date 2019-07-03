@@ -38,21 +38,27 @@ var setWPClicked=false;
         $("#div2").removeClass('hide').addClass('hide');
         $("#div3").removeClass('hide').addClass('hide');
     })
-    
+
     $("#btnStripe").click(function (event) {
         $("#div1").removeClass('hide');
         $("#div2").removeClass('hide');
         $("#div3").removeClass('hide');
     })
-    
-    document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
-    
+
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+
 })();
 
 var randomColourOne;
 var randomColourTwo;
 
 $(document).ready(function () {
+    document.body.addEventListener('touchmove', function (event) {
+        event.preventDefault();
+    }, false);
+
     $("#colourOne").hide();
     $("#colourTwo").hide();
 })
@@ -64,7 +70,7 @@ $(document).ready(function () {
     });
 });
 
-function colourIt(divId){
+function colourIt(divId) {
     firstColour(divId);
     firstColour('div1');
     firstColour('div2');
@@ -90,43 +96,43 @@ function firstColour(divId) {
     }
 }
 
-function firstColourB1(){
+function firstColourB1() {
     randomColourOne="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        randomColourTwo="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+    randomColourTwo="#000000".replace(/0/g, function () {
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        var background=document.getElementById("div1");
-        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+    var background=document.getElementById("div1");
+    background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
 }
 
-function firstColourB2(){
+function firstColourB2() {
     randomColourOne="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        randomColourTwo="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+    randomColourTwo="#000000".replace(/0/g, function () {
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        var background=document.getElementById("div2");
-        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+    var background=document.getElementById("div2");
+    background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
 }
 
-function firstColourB3(){
+function firstColourB3() {
     randomColourOne="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        randomColourTwo="#000000".replace(/0/g, function () {
-            return (~~(Math.random()*16)).toString(16);
-        });
+    randomColourTwo="#000000".replace(/0/g, function () {
+        return (~~(Math.random()*16)).toString(16);
+    });
 
-        var background=document.getElementById("div3");
-        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+    var background=document.getElementById("div3");
+    background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
 }
 
 function proDtlForNextMsg(respData) {
