@@ -38,22 +38,31 @@
 
         <title>The lonely red button</title>
     </head>
-    <body id="background" onload="firstColour()" onclick="firstColour()">
-        <button id="btnSetWallpaper">Set as wallpaper</button>
+    <body id="background" onload="colourIt('background')" onclick="colourIt('background')">
         <br/>
-        <br/>
-        <textarea id="datauri">
+        <button id="btnSetWallpaper" class="btn btn-success">Set wallpaper</button> 
+        <!--<i class="fa fa3 fa-paint-brush"></i>-->
+        <br/> <br/>        
+        <button id="btnGradient" class="btn btn-info">Gradient</button> <button id="btnStripe" class="btn btn-info">Stripe</button>
+        
+        <div id="div1" class="div1 hide"></div>
+        <div id="div2" class="div2 hide"></div>
+        <div id="div3" class="div3 hide"></div>
+        <div id="div4" class="div4 hide"></div>
+        <!--<div class="div5"></div>-->
+        
+<!--        <textarea id="datauri">
             
-        </textarea>
+        </textarea>-->
 
-        <div id="colourOne">
+<!--        <div id="colourOne">
             <h3 id="topColour"></h3>
         </div>
 
         <div id="colourTwo">
             <h3 id="bottomColour"></h3>
-        </div>
-
+        </div>-->        
+        
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

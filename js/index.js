@@ -8,7 +8,7 @@ var setWPClicked=false;
     changeCss('.btn-circle', 'height:'+btnchw+'px; width:'+btnchw+'px;');
     changeCss('#divMessageParent', 'height:'+eval(screenHeight*25/100)+'px;');
     changeCss('#divContent', 'height:'+eval(screenHeight*50/100)+'px;');
-    changeCss('.fa', 'font-size:'+eval(screenHeight*35/100)+'px;');
+    changeCss('.fa', 'font-size:'+eval(screenHeight*8/100)+'px;');
     changeCss('.navbar-brand', 'font-size:'+eval(fontSize/2)+'px;');
     changeCss('#divCallRecords', 'font-size:'+recordFontSize+'px;');
     changeCss('label.error', 'font-size:'+eval(fontSize/1.5)+'px;');
@@ -28,11 +28,23 @@ var setWPClicked=false;
         setWallpaper();
         setTimeout(function () {
             setWPClicked=false;
-            $('#btnSetWallpaper').show();
+            $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
             $('#datauri').show();
         }, 2000);
     })
 
+    $("#btnGradient").click(function (event) {
+        $("#div1").removeClass('hide').addClass('hide');
+        $("#div2").removeClass('hide').addClass('hide');
+        $("#div3").removeClass('hide').addClass('hide');
+    })
+    
+    $("#btnStripe").click(function (event) {
+        $("#div1").removeClass('hide');
+        $("#div2").removeClass('hide');
+        $("#div3").removeClass('hide');
+    })
+    
 })();
 
 var randomColourOne;
@@ -50,7 +62,15 @@ $(document).ready(function () {
     });
 });
 
-function firstColour() {
+function colourIt(divId){
+    firstColour(divId);
+    firstColour('div1');
+    firstColour('div2');
+    firstColour('div3');
+    firstColour('div4');
+}
+
+function firstColour(divId) {
     if (!setWPClicked) {
         randomColourOne="#000000".replace(/0/g, function () {
             return (~~(Math.random()*16)).toString(16);
@@ -60,12 +80,51 @@ function firstColour() {
             return (~~(Math.random()*16)).toString(16);
         });
 
-        var background=document.getElementById("background");
+        var background=document.getElementById(divId);
         background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
 
-        document.getElementById("topColour").innerHTML=(randomColourOne);
-        document.getElementById("bottomColour").innerHTML=(randomColourTwo);
+//        document.getElementById("topColour").innerHTML=(randomColourOne);
+//        document.getElementById("bottomColour").innerHTML=(randomColourTwo);
     }
+}
+
+function firstColourB1(){
+    randomColourOne="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        randomColourTwo="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        var background=document.getElementById("div1");
+        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+}
+
+function firstColourB2(){
+    randomColourOne="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        randomColourTwo="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        var background=document.getElementById("div2");
+        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+}
+
+function firstColourB3(){
+    randomColourOne="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        randomColourTwo="#000000".replace(/0/g, function () {
+            return (~~(Math.random()*16)).toString(16);
+        });
+
+        var background=document.getElementById("div3");
+        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
 }
 
 function proDtlForNextMsg(respData) {
@@ -177,7 +236,7 @@ function socialShare3() {
 
 function setWallpaper() {
 
-    $('#btnSetWallpaper').hide();
+    $('#btnSetWallpaper, #btnGradient, #btnStripe').hide();
     $('#datauri').hide();
 
     setTimeout(function () {
@@ -193,7 +252,7 @@ function setWallpaper() {
                                 alert(error);
                                 console.error(error);
                             } else {
-                                $('#btnSetWallpaper').show();
+                                $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
                                 $('#datauri').show();
                             }
                         });
