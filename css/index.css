@@ -36,6 +36,12 @@ body {
     /*overflow: hidden;*/
 }
 
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
 #btnSetWallpaper{
     position: absolute;
     z-index: 999;

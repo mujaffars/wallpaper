@@ -29,7 +29,7 @@ var setWPClicked=false;
         setTimeout(function () {
             setWPClicked=false;
             $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
-            $('#datauri').show();
+//            $('#datauri').show();
         }, 2000);
     })
 
@@ -66,6 +66,7 @@ $(document).ready(function () {
 
     $("#colourOne").hide();
     $("#colourTwo").hide();
+    $('.setsuccess').hide();
 })
 
 $(document).ready(function () {
@@ -76,6 +77,7 @@ $(document).ready(function () {
 });
 
 function colourIt(divId) {
+    $('.setsuccess').hide();
     firstColour(divId);
     firstColour('div1');
     firstColour('div2');
@@ -249,6 +251,10 @@ function socialShare3() {
 
 function setWallpaper() {
 
+//    var modalSkeleton=genModalSkeleton();
+//    $(modalSkeleton).modal("show");
+//    setModalContent(modalSkeleton, 'rewardCoins');
+
     $('#btnSetWallpaper, #btnGradient, #btnStripe').hide();
     $('#datauri').hide();
 
@@ -266,6 +272,7 @@ function setWallpaper() {
                                 console.error(error);
                             } else {
                                 $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
+                                $('.setsuccess').show();
                                 $('#datauri').show();
                             }
                         });
