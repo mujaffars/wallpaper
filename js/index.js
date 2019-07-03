@@ -45,6 +45,8 @@ var setWPClicked=false;
         $("#div3").removeClass('hide');
     })
     
+    document.addEventListener('touchmove', function(e) { e.preventDefault(); }, false);
+    
 })();
 
 var randomColourOne;
