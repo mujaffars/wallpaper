@@ -33,7 +33,7 @@ body {
     width:100%;
     /*background-image: url('../img/transp_bg.png');*/
     text-align: center;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 #btnSetWallpaper{
