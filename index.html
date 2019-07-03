@@ -38,31 +38,35 @@
 
         <title>The lonely red button</title>
     </head>
-    <body id="background" onload="colourIt('background')" onclick="colourIt('background')">
-        <br/>
-        <button id="btnSetWallpaper" class="btn btn-success">Set wallpaper</button> 
-        <!--<i class="fa fa3 fa-paint-brush"></i>-->
-        <br/> <br/>        
-        <button id="btnGradient" class="btn btn-info">Gradient</button> <button id="btnStripe" class="btn btn-info">Stripe</button>
-        
-        <div id="div1" class="div1 hide"></div>
-        <div id="div2" class="div2 hide"></div>
-        <div id="div3" class="div3 hide"></div>
-        <div id="div4" class="div4 hide"></div>
-        <!--<div class="div5"></div>-->
-        
-<!--        <textarea id="datauri">
-            
-        </textarea>-->
+    <body id="background" onload="colourIt('background')" onclick="colourIt('background')" style="position:absolute">
 
-<!--        <div id="colourOne">
-            <h3 id="topColour"></h3>
+        <div style="width:100%; height:100%; overflow:hidden">
+            <br/>
+            <button id="btnSetWallpaper" class="btn btn-success">Set wallpaper</button> 
+            <!--<i class="fa fa3 fa-paint-brush"></i>-->
+            <br/> <br/>        
+            <button id="btnGradient" class="btn btn-info">Gradient</button> <button id="btnStripe" class="btn btn-info">Stripe</button>
+
+            <div id="div1" class="div1 hide"></div>
+            <div id="div2" class="div2 hide"></div>
+            <div id="div3" class="div3 hide"></div>
+            <div id="div4" class="div4 hide"></div>
+            <!--<div class="div5"></div>-->
+
+            <!--        <textarea id="datauri">
+                        
+                    </textarea>-->
+
+            <!--        <div id="colourOne">
+                        <h3 id="topColour"></h3>
+                    </div>
+            
+                    <div id="colourTwo">
+                        <h3 id="bottomColour"></h3>
+                    </div>-->        
+
         </div>
 
-        <div id="colourTwo">
-            <h3 id="bottomColour"></h3>
-        </div>-->        
-        
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->

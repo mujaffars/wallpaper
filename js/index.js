@@ -4,7 +4,7 @@ var btnActive=true;
 var setWPClicked=false;
 
 (function () {
-    changeCss('body', 'font-size:'+fontSize+'px;');
+//    changeCss('body', 'font-size:'+fontSize+'px;');
     changeCss('.btn-circle', 'height:'+btnchw+'px; width:'+btnchw+'px;');
     changeCss('#divMessageParent', 'height:'+eval(screenHeight*25/100)+'px;');
     changeCss('#divContent', 'height:'+eval(screenHeight*50/100)+'px;');
@@ -17,11 +17,11 @@ var setWPClicked=false;
 
     getSetLocalstorage('msgid', '', 'define')
 
-    $('body').css({
-        height: $(window).height(),
-        width: parseInt($(window).height())*56.25/100
-    })
-    createDb();
+//    $('body').css({
+//        height: $(window).height(),
+//        width: parseInt($(window).height())*56.25/100
+//    })
+//    createDb();
 
     $("#btnSetWallpaper").click(function (event) {
         setWPClicked=true;
@@ -57,9 +57,11 @@ var randomColourTwo;
 $(document).ready(function () {
     document.addEventListener('touchmove', function (e) {
         e.preventDefault();
+        console.log('herer');
     }, false);
     document.body.addEventListener('touchmove', function (event) {
         event.preventDefault();
+        console.log('aaaaa');
     }, false);
 
     $("#colourOne").hide();
