@@ -232,14 +232,6 @@ function giftLike(respData) {
     $('#divContent').find("#txtFunCnt").val(eval(funCnt+1));
 }
 
-function onLoad() {
-    if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
-        document.addEventListener('deviceready', initApp, false);
-    } else {
-        initApp();
-    }
-}
-
 function changeCss(className, classValue) {
     // we need invisible container to store additional css definitions
     var cssMainContainer=$('#css-modifier-container');
