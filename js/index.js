@@ -50,9 +50,11 @@ $(document).ready(function () {
 
     document.addEventListener('deviceready', function () {
         
-        cordova.plugins.backgroundMode.enable();        
+        cordova.plugins.backgroundMode.enable();
+        
         cordova.plugins.backgroundMode.overrideBackButton();
         
+        alert('donnne');
     }, false);
 
 });
