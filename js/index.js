@@ -15,7 +15,6 @@ $(document).ready(function () {
     changeCss('.imgLoader', 'height:'+eval(fontSize/2)+'px;');
     changeCss('#GridView1, #sltUsers', 'font-size:'+eval(fontSize/2.2)+'px;');
 
-    getSetLocalstorage('msgid', '', 'define')
 
 //    $('body').css({
 //        height: $(window).height(),
