@@ -44,18 +44,6 @@ $(document).ready(function () {
         $("#div3").removeClass('hide');
     })
 
-    document.addEventListener('deviceready', function () {
-
-        document.addEventListener('backbutton', function (event) {
-            alert('hereee');
-            event.preventDefault();
-            
-            alert('hereee 222');
-            window.plugins.appMinimize.minimize();
-        });
-
-    }, false);
-
 });
 
 var randomColourOne;
