@@ -45,12 +45,12 @@ $(document).ready(function () {
     })
 
     document.addEventListener('deviceready', function () {
-        
-        window.plugins.backgroundMode.enable();
-        
-        window.plugins.backgroundMode.overrideBackButton();
-        
-        alert('donnne');
+
+        document.addEventListener('backbutton', function (event) {
+            event.preventDefault();
+            window.plugins.appMinimize.minimize();
+        });
+
     }, false);
 
 });
