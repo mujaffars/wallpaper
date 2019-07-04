@@ -13,6 +13,8 @@
     <!--    <gap:plugin name="cordova-plugin-file" source="npm" />
     <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>-->
     
+    <gap:plugin name="cordova-plugin-background-mode" source="npm"/>
+    
     <plugin spec="https://github.com/fbsanches/cordova-plugin-wallpaper.git" source="git" />
     
     <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
