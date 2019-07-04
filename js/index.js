@@ -44,15 +44,11 @@ $(document).ready(function () {
         $("#div3").removeClass('hide');
     })
 
-    document.addEventListener('touchmove', function (e) {
-        e.preventDefault();
-    }, false);
-
     document.addEventListener('deviceready', function () {
         
-        cordova.plugins.backgroundMode.enable();
+        window.plugins.backgroundMode.enable();
         
-        cordova.plugins.backgroundMode.overrideBackButton();
+        window.plugins.backgroundMode.overrideBackButton();
         
         alert('donnne');
     }, false);
@@ -63,14 +59,6 @@ var randomColourOne;
 var randomColourTwo;
 
 $(document).ready(function () {
-    document.addEventListener('touchmove', function (e) {
-        e.preventDefault();
-        console.log('herer');
-    }, false);
-    document.body.addEventListener('touchmove', function (event) {
-        event.preventDefault();
-        console.log('aaaaa');
-    }, false);
 
     $("#colourOne").hide();
     $("#colourTwo").hide();
