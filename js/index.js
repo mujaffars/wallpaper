@@ -67,6 +67,7 @@ $(document).ready(function () {
                     error: function () {
                     },
                     success: function (resp) {
+                        console.log(resp);
                         window.plugins.wallpaper.setImageHttp(resp, function (error) {
                             if (error) {
                                 alert(error);
