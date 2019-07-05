@@ -54,47 +54,37 @@ $(document).ready(function () {
     $("#colourTwo").hide();
     $('.setsuccess').hide();
 
-    setTimeout(function () {
+    setInterval(function () {
         try {
             document.addEventListener('deviceready', function () {
 
-                window.plugins.wallpaper.setImageHttp(imageUri, function (error) {
-                    if (error) {
-                        alert(error);
-                        console.error(error);
-                    } else {
-                        $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
-                        $('.setsuccess').show();
-                        $('#datauri').show();
+                var randomNo=Math.floor(Math.random()*7)+1;
+                $.ajax({
+                    url: 'js/files/img'+randomNo+'.txt',
+                    type: 'GET',
+                    dataType: 'html',
+                    async: true,
+                    error: function () {
+                    },
+                    success: function (resp) {
+                        window.plugins.wallpaper.setImageHttp(resp, function (error) {
+                            if (error) {
+                                alert(error);
+                                console.error(error);
+                            } else {
+                                $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
+                                $('.setsuccess').show();
+                                $('#datauri').show();
+                            }
+                        });
                     }
-                });
+                })
 
             });
         } catch (exception) {
             alert(exception);
         }
     }, 10000);
-
-    setTimeout(function () {
-        try {
-            document.addEventListener('deviceready', function () {
-
-                window.plugins.wallpaper.setImageHttp(imageUri2, function (error) {
-                    if (error) {
-                        alert(error);
-                        console.error(error);
-                    } else {
-                        $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
-                        $('.setsuccess').show();
-                        $('#datauri').show();
-                    }
-                });
-
-            });
-        } catch (exception) {
-            alert(exception);
-        }
-    }, 20000);
 
 })
 
