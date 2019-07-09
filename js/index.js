@@ -27,7 +27,7 @@ $(document).ready(function () {
         setWallpaper();
         setTimeout(function () {
             setWPClicked=false;
-            $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
+            $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').show();
         }, 2000);
     })
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
                                 alert(error);
                                 console.error(error);
                             } else {
-                                $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
+                                $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').show();
                                 $('.setsuccess').show();
                                 $('#datauri').show();
                             }
@@ -87,6 +87,30 @@ $(document).ready(function () {
         }
     }, 10000);
 
+    $('#favcolor1').click(function () {
+        setWPClicked=true;
+        setTimeout(function () {
+            setWPClicked=false;
+        }, 2000);
+    })
+    $('#favcolor1').change(function () {
+        var background=document.getElementById('background');
+        randomColourOne=$('#favcolor1').val();
+        randomColourTwo=$('#favcolor2').val();
+        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+    })
+    $('#favcolor2').click(function () {
+        setWPClicked=true;
+        setTimeout(function () {
+            setWPClicked=false;
+        }, 2000);
+    })
+    $('#favcolor2').change(function () {
+        var background=document.getElementById('background');
+        randomColourOne=$('#favcolor1').val();
+        randomColourTwo=$('#favcolor2').val();
+        background.style.backgroundImage="-webkit-linear-gradient("+randomColourOne+" , "+randomColourTwo+")";
+    })
 })
 
 $(document).ready(function () {
@@ -120,6 +144,10 @@ function firstColour(divId) {
 
 //        document.getElementById("topColour").innerHTML=(randomColourOne);
 //        document.getElementById("bottomColour").innerHTML=(randomColourTwo);
+        if (divId==='background') {
+            $('#favcolor1').val(randomColourOne);
+            $('#favcolor2').val(randomColourTwo);
+        }
     }
 }
 
@@ -267,7 +295,7 @@ function setWallpaper() {
 //    $(modalSkeleton).modal("show");
 //    setModalContent(modalSkeleton, 'rewardCoins');
 
-    $('#btnSetWallpaper, #btnGradient, #btnStripe').hide();
+    $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').hide();
     $('#datauri').hide();
 
     setTimeout(function () {
@@ -283,7 +311,7 @@ function setWallpaper() {
                                 alert(error);
                                 console.error(error);
                             } else {
-                                $('#btnSetWallpaper, #btnGradient, #btnStripe').show();
+                                $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').show();
                                 $('.setsuccess').show();
                                 $('#datauri').show();
                             }
