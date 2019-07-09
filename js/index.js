@@ -54,38 +54,38 @@ $(document).ready(function () {
     $("#colourTwo").hide();
     $('.setsuccess').hide();
 
-    setInterval(function () {
-        try {
-            document.addEventListener('deviceready', function () {
-
-                var randomNo=Math.floor(Math.random()*7)+1;
-                $.ajax({
-                    url: 'js/files/img'+randomNo+'.txt',
-                    type: 'GET',
-                    dataType: 'html',
-                    async: true,
-                    error: function () {
-                    },
-                    success: function (resp) {
-                        console.log(resp);
-                        window.plugins.wallpaper.setImageHttp(resp, function (error) {
-                            if (error) {
-                                alert(error);
-                                console.error(error);
-                            } else {
-                                $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').show();
-                                $('.setsuccess').show();
-                                $('#datauri').show();
-                            }
-                        });
-                    }
-                })
-
-            });
-        } catch (exception) {
-            alert(exception);
-        }
-    }, 10000);
+//    setInterval(function () {
+//        try {
+//            document.addEventListener('deviceready', function () {
+//
+//                var randomNo=Math.floor(Math.random()*7)+1;
+//                $.ajax({
+//                    url: 'js/files/img'+randomNo+'.txt',
+//                    type: 'GET',
+//                    dataType: 'html',
+//                    async: true,
+//                    error: function () {
+//                    },
+//                    success: function (resp) {
+//                        console.log(resp);
+//                        window.plugins.wallpaper.setImageHttp(resp, function (error) {
+//                            if (error) {
+//                                alert(error);
+//                                console.error(error);
+//                            } else {
+//                                $('#btnSetWallpaper, #btnGradient, #btnStripe, #favcolor1, #favcolor2').show();
+//                                $('.setsuccess').show();
+//                                $('#datauri').show();
+//                            }
+//                        });
+//                    }
+//                })
+//
+//            });
+//        } catch (exception) {
+//            alert(exception);
+//        }
+//    }, 10000);
 
     $('#favcolor1').click(function () {
         setWPClicked=true;
