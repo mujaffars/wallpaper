@@ -9,16 +9,16 @@
     <access origin="*" />
 
     <preference name="permissions" value="none"/>
-    <preference name="android-build-tool" value="gradle" /> 
-    <!--    <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>-->
-    
-    <gap:plugin name="cordova-plugin-appminimize" source="npm"/>
+    <preference name="android-build-tool" value="gradle" />
     
     <plugin spec="https://github.com/fbsanches/cordova-plugin-wallpaper.git" source="git" />
     
     <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
     <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+    
+    <plugin name="cordova-plugin-admob-free"> 
+        <variable name="ADMOB_APP_ID" value="ca-app-pub-3868593263837372~7837155122" /> 
+    </plugin>
     
     <!-- Customize your app and platform with the preference element. -->
     <preference name='phonegap-version' value='cli-7.1.0' />

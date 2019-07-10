@@ -1,13 +1,13 @@
 var admobid = {}
 if (/(android)/i.test(navigator.userAgent)) {  // for android & amazon-fireos
     admobid = {
-        banner: 'ca-app-pub-3868593263837372/4286959847',
-        interstitial: 'ca-app-pub-3868593263837372/5763693049'
+        banner: 'ca-app-pub-3868593263837372/2584828446',
+        interstitial: 'ca-app-pub-3868593263837372/2257525381'
     };
 } else {
     admobid = {
-        banner: 'ca-app-pub-3868593263837372/4286959847',
-        interstitial: 'ca-app-pub-3868593263837372/5763693049'
+        banner: 'ca-app-pub-3868593263837372/2584828446',
+        interstitial: 'ca-app-pub-3868593263837372/2257525381'
     }
 }
 

@@ -49,8 +49,11 @@ body {
 }
 
 .divBtns{
+    position: absolute;
     text-align: center;
     margin: 0 auto;
+    z-index: 9999;
+    width: 100%;
 }
 #btnGradient{
     /*position: absolute;*/
