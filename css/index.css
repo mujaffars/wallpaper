@@ -48,16 +48,28 @@ body {
     left: 35%;
 }
 
+.divBtns{
+    text-align: center;
+    margin: 0 auto;
+}
 #btnGradient{
-    position: absolute;
+    /*position: absolute;*/
     z-index: 999;
-    left: 20%;
+    /*left: 15%;*/
+    margin-right: 5%;
 }
 
 #btnStripe{
-    position: absolute;
+    /*position: absolute;*/
     z-index: 999;
-    left: 62%;
+    /*left: 45%;*/
+    margin-right: 5%;
+}
+
+#btnShare{
+    /*position: absolute;*/
+    z-index: 999;
+    /*left: 75%;*/
 }
 
 /* Portrait layout (default) */
